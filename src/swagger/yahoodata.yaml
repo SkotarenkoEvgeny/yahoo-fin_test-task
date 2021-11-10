@@ -1,0 +1,46 @@
+parameters:
+  - name: data_source
+    in: query
+    description: "set data source from company page or csv file"
+    type: string
+    enum: ['csv', 'page']
+    default: csv
+  - name: company
+    in: query
+    description: "set company name for handling a data"
+    type: string
+    enum: ['PD', 'AAPL', 'ZUO', 'PINS', 'ZM', 'DOCU', 'CLDR', 'RUN']
+definitions:
+  finance_data:
+    type: object
+    properties:
+      date:
+        type: object
+        properties:
+          low:
+            type: integer
+            description: "data of 'low' column"
+          close:
+            type: integer
+            description: "data of 'close' column"
+          volume:
+            type: integer
+            description: "data of 'volume' column"
+          high:
+            type: integer
+            description: "data of 'high' column"
+          open:
+            type: integer
+            description: "data of 'open' column"
+          adjclose:
+            type: integer
+            description: "data of 'adjclose' column"
+
+responses:
+  200:
+    content:
+      application/json:
+
+  400:
+    description: "'set argument data_source (csv, page)' or 'ad company
+    argument {company}'"

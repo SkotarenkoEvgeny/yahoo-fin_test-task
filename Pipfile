@@ -10,6 +10,7 @@ SQLAlchemy = "*"
 Flask-RESTful = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
+flasgger = "*"
 
 [dev-packages]
 

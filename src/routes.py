@@ -16,6 +16,9 @@ parser.add_argument('company')  # name of companies
 class YahooData(Resource):
 
     def get(self):
+        """
+        file: swagger/yahoodata.yaml
+        """
         args = parser.parse_args(strict=True)
         company = args['company']
         data_source = args['data_source']
